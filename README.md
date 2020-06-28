@@ -1,4 +1,4 @@
-## Lead Management System
+## Serverless Lead Management System
 
 ## Getting Started:
 > 
