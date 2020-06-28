@@ -6,7 +6,6 @@ const hooks = {
   beforeCreate(lead) {
   },
 };
-
 const tableName = 'agent_lead';
 
 const AgentLead = sequelize.define('AgentLead', {
@@ -25,5 +24,9 @@ const AgentLead = sequelize.define('AgentLead', {
     type: Sequelize.BOOLEAN,
   },
 }, { hooks, tableName });
+/**
+ * TODO: Association: An agent can have many leads.
+ * A lead belong to an agent.
+ */
 
 module.exports = AgentLead;

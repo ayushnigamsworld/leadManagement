@@ -24,7 +24,7 @@ const AgentController = () => {
 
   const updateProp = async (req, res) => {
     const {params} = req;
-    // Validations of the fields to be done here.
+    // TODO: Validations of the fields to be done here.
     const agents = await AgentWork.update({where: {id: params.lead_id}}, params);
     return res.status(200).json({agents});
   };
@@ -32,6 +32,7 @@ const AgentController = () => {
   const assignAgentLead = async (req, res) => {
     const {body} = req;
     const {leadId, agentId} = body;
+
     const result = await AgentLeads.create({
       leadId,
       agentId,

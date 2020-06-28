@@ -73,12 +73,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/api/services/cache.service.js">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/api/services/cloud-providers/AwsServiceProvider.js">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/api/services/lead.qualifier.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/api/services/leadDistribution.service.js">
           <value>
             <set />
           </value>
