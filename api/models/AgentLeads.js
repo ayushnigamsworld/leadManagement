@@ -8,22 +8,28 @@ const hooks = {
 };
 const tableName = 'agent_lead';
 
+/**
+ * Sequelize will convert camelCase to snakeCase for db columns automatically with a setting.
+ */
+
 const AgentLead = sequelize.define('AgentLead', {
   id: {
     type: Sequelize.UUID,
     unique: true,
     primaryKey: true,
   },
-  agent_id: {
+  agentId: {
     type: Sequelize.UUID,
   },
-  lead_id: {
+  leadId: {
     type: Sequelize.UUID,
   },
   active: {
     type: Sequelize.BOOLEAN,
+    default: true,
   },
 }, { hooks, tableName });
+
 /**
  * TODO: Association: An agent can have many leads.
  * A lead belong to an agent.

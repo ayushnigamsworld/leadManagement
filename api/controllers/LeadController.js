@@ -1,5 +1,6 @@
 const Lead = require('../models/Leads');
 const LeadScoringService = require('../services/leadScoring.service');
+const LeadDistributionService = require('../services/leadDistribution.service');
 
 const LeadController = () => {
 
@@ -33,6 +34,12 @@ const LeadController = () => {
     return res.status(200).json({leads});
   };
 
+  /**
+   * Lead Scoring updation.
+   * @param req
+   * @param res
+   * @returns {Promise.<Sequelize.json|Json|*>}
+   */
   const scoring = async (req, res) => {
     const {body} = req;
     const leadId = body.lead_id;
@@ -43,10 +50,26 @@ const LeadController = () => {
     return res.status(200).json({leads});
   };
 
+  /**
+   * Lead Distribution/Allocation.
+   * Main solution for given assignment.
+   * @param req
+   * @param res
+   * @returns {Promise.<Sequelize.json|Json|*>}
+   */
+  const distribute = async (req, res) => {
+    const {body} = req;
+    const {leadId, locationId} = body;
+    // Apply validations.
+    const result = await new LeadDistributionService(leadId).distributeLead(locationId);
+    return res.status(200).json({result});
+  };
+
   return {
     getAll,
     bulkInsert,
     scoring,
+    distribute
   };
 };
 
