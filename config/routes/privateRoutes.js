@@ -6,7 +6,7 @@ const privateRoutes = {
   'PUT /agents-work' : 'AgentWorkController.updateProp',
   'GET /locations' : 'LocationController.getAll',
   'POST /agents-work' : 'AgentWorkController.bulkAssignAgentLead',
-  'POST /agent-distribution' : 'LeadController.distribute',
+  'POST /lead-distribution' : 'LeadController.distribute',
 };
 
 module.exports = privateRoutes;
