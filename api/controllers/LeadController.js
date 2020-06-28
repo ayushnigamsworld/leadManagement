@@ -38,8 +38,8 @@ const LeadController = () => {
     const leadId = body.lead_id;
     const scoreObj = body.score;
     // TODO: Apply validations for LeadId.
-    new LeadScoringService(leadId).scoreUpdate(scoreObj);
-    const leads = await Lead.bulkCreate(leadsArr);
+    const updatedLeadObj = new LeadScoringService(leadId).scoreUpdate(scoreObj);
+    const leads = await Lead.update(updatedLeadObj);
     return res.status(200).json({leads});
   };
 

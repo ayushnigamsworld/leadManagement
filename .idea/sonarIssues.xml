@@ -13,6 +13,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/api/controllers/SchedulerController.js">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/api/controllers/UserController.js">
           <value>
             <set />
@@ -33,7 +38,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/api/services/cloud-providers/AwsServiceProvider.js">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/api/services/lead.qualifier.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/api/services/leadPicker.service.js">
           <value>
             <set />
           </value>
@@ -43,7 +58,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/api/services/queue/dataFormats/lead.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/api/services/queue/sqs/LeadSqsService.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/api/services/queue/sqs/SqsService.js">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/api/services/scheduler.service.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/api/services/schedules/LeadSchedules.js">
           <value>
             <set />
           </value>
@@ -54,6 +89,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/config/index.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/config/queue.js">
           <value>
             <set />
           </value>
