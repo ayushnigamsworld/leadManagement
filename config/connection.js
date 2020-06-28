@@ -1,9 +1,9 @@
 const development = {
-  database: 'databasename',
-  username: 'username',
+  database: 'zfunds',
+  username: 'postgres',
   password: 'password',
   host: 'localhost',
-  dialect: 'sqlite' || 'mysql' || 'postgres',
+  dialect: 'postgres' || 'sqlite' || 'mysql',
 };
 
 const testing = {

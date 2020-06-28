@@ -2,7 +2,21 @@ const User = require('../models/User');
 const authService = require('../services/auth.service');
 const bcryptService = require('../services/bcrypt.service');
 
+/**
+ * Users of Lead Management System.
+ * [Admins, Supervisors, Managers, Field-Agents, ....]
+ * @returns {{register: (function(*, *)), login: (function(*, *)), validate: (function(*, *)), getAll: (function(*, *))}}
+ * @constructor
+ */
 const UserController = () => {
+  /**
+   * Very simple use case of registering. Not focuses on this.
+   * Not my implementation.
+   * Of-course I'll have better implementation.
+   * @param req
+   * @param res
+   * @returns {Promise.<Sequelize.json|*|Json>}
+   */
   const register = async (req, res) => {
     const { body } = req;
 
@@ -24,6 +38,12 @@ const UserController = () => {
     return res.status(400).json({ msg: 'Bad Request: Passwords don\'t match' });
   };
 
+  /**
+   * Not my implementation.
+   * @param req
+   * @param res
+   * @returns {Promise.<Sequelize.json|*|Json>}
+   */
   const login = async (req, res) => {
     const { email, password } = req.body;
 
@@ -56,6 +76,11 @@ const UserController = () => {
     return res.status(400).json({ msg: 'Bad Request: Email or password is wrong' });
   };
 
+  /**
+   * Not my implementation.
+   * @param req
+   * @param res
+   */
   const validate = (req, res) => {
     const { token } = req.body;
 
@@ -68,6 +93,12 @@ const UserController = () => {
     });
   };
 
+  /**
+   * Not my implementation.
+   * @param req
+   * @param res
+   * @returns {Promise.<Sequelize.json|*|Json>}
+   */
   const getAll = async (req, res) => {
     try {
       const users = await User.findAll();
