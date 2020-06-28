@@ -1,4 +1,5 @@
 const Lead = require('../models/Leads');
+const LeadScoringService = require('../services/leadScoring.service');
 
 const LeadController = () => {
 
@@ -32,10 +33,20 @@ const LeadController = () => {
     return res.status(200).json({leads});
   };
 
+  const scoring = async (req, res) => {
+    const {body} = req;
+    const leadId = body.lead_id;
+    const scoreObj = body.score;
+    // TODO: Apply validations for LeadId.
+    new LeadScoringService(leadId).scoreUpdate(scoreObj);
+    const leads = await Lead.bulkCreate(leadsArr);
+    return res.status(200).json({leads});
+  };
 
   return {
     getAll,
     bulkInsert,
+    scoring,
   };
 };
 
