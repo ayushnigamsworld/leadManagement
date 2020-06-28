@@ -3,6 +3,11 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="$PROJECT_DIR$/api/controllers/AgentController.js">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/api/controllers/LeadController.js">
           <value>
             <set />
@@ -19,6 +24,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/api/controllers/UserController.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/api/models/Agents.js">
           <value>
             <set />
           </value>
