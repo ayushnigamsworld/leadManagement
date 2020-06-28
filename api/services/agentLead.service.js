@@ -1,3 +1,6 @@
+const cacheService = require('../services/cache.service');
+const AgentLeads = require('../models/AgentLeads');
+
 class AgentLeadService {
   constructor() {
 
@@ -11,8 +14,27 @@ class AgentLeadService {
    * @param agentId
    * @param leadId
    */
-  assignLeadToAgent(agentId, leadId) {
+  async assignLeadToAgent(agentId, leadId) {
+    let agentCurrentCapacity = await cacheService.getIORedisInstance().get(`capacity_${agentId}`) || 0;
+    await AgentLeads.create({
+      leadId,
+      agentId,
+    });
+    agentCurrentCapacity += 1;
+    await cacheService.getIORedisInstance().set(`capacity_${agentId}`, agentCurrentCapacity);
+  }
 
+  async findLiveCountAgentLead(agentId) {
+    let currentLeadCountForAgent = await cacheService.getIORedisInstance().get(`agentLeadCount_${agentId}`);
+    if (currentLeadCountForAgent === null) {
+      currentLeadCountForAgent = await AgentLeads.count({
+        where: {
+          agentId,
+        }
+      });
+      await cacheService.getIORedisInstance().set(`agentLeadCount_${agentId}`, currentLeadCountForAgent);
+    }
+    return currentLeadCountForAgent;
   }
 }
 
