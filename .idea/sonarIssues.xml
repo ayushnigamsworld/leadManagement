@@ -23,12 +23,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/api/controllers/LocationController.js">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/api/controllers/SchedulerController.js">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/api/controllers/UserController.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/api/models/AgentLeads.js">
           <value>
             <set />
           </value>
@@ -49,6 +59,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/api/models/LeadsQualified.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/api/models/Location.js">
           <value>
             <set />
           </value>

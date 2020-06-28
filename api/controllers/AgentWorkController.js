@@ -3,6 +3,7 @@
  * General setting between agents and their leads can be done here.
  */
 const AgentWork = require('../models/AgentWork');
+const AgentLeads = require('../models/AgentLeads');
 
 const AgentController = () => {
 
@@ -21,11 +22,32 @@ const AgentController = () => {
     return res.status(200).json({agents});
   };
 
-  const updateBucketSize = async (req, res) => {
+  const updateProp = async (req, res) => {
     const {params} = req;
     // Validations of the fields to be done here.
     const agents = await AgentWork.update({where: {id: params.lead_id}}, params);
     return res.status(200).json({agents});
+  };
+
+  const assignAgentLead = async (req, res) => {
+    const {body} = req;
+    const {leadId, agentId} = body;
+    const result = await AgentLeads.create({
+      leadId,
+      agentId,
+    });
+    return res.status(200).json({result});
+  };
+
+  const bulkAssignAgentLead = async (req, res) => {
+    const {body} = req;
+    const {leadId, agentId} = body;
+    // TODO: Basic transformation for buk op.
+    const result = await AgentLeads.bulkCreate([{
+      leadId,
+      agentId,
+    }]);
+    return res.status(200).json({result});
   };
 
   /**
@@ -34,7 +56,9 @@ const AgentController = () => {
 
   return {
     getAll,
-    updateBucketSize,
+    updateProp,
+    assignAgentLead,
+    bulkAssignAgentLead,
   };
 };
 
